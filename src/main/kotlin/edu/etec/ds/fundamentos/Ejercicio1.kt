@@ -38,17 +38,16 @@ fun esPar(numero: Int): Boolean {
 
 fun esImpar(numero: Int): Boolean {
     return numero % 2 == 1
-
 }
 
 fun valorAbsoluto(numero: Int): Int {
-    return numero == 0
+    return if (numero < 0) -numero else numero
 }
 
 fun maximo(a: Int, b: Int): Int {
-    TODO("Retornar el mayor entre a y b")
+    return if (a > b) a else b
 }
 
 fun minimo(a: Int, b: Int): Int {
-    TODO("Retornar el menor entre a y b")
+    return if (a < b) a else b
 }

@@ -2,6 +2,7 @@ package edu.etec.ds.fundamentos
 
 fun obtenerTipoEntero(): String {
     TODO("Retornar el nombre del tipo inferido para 42")
+    return
 }
 
 fun obtenerTipoDouble(): String {
