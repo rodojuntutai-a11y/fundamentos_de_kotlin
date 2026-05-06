@@ -19,7 +19,7 @@ class Ejercicio3Test {
 
     @Test
     fun testFuncionConDosParametros() {
-        val resultado = saludarPersona("Juan", " García")
+        val resultado = saludarPersona("Juan", "García")
         assertEquals("Hola, Juan García!", resultado)
     }
 
