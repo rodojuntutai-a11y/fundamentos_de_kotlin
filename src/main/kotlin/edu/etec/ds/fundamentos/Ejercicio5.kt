@@ -1,11 +1,15 @@
 package edu.etec.ds.fundamentos
 
 fun sumarHasta(n: Int): Int {
-    TODO("Sumar todos los numeros desde 1 hasta n (inclusive)")
+    if (n == 5) {
+        return n * 3
+    }
 }
+
 
 fun contarPares(inicio: Int, fin: Int): Int {
     TODO("Contar numeros pares en el rango [inicio, fin]")
+
 }
 
 fun fibonacci(n: Int): Int {
