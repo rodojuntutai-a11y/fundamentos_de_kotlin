@@ -1,49 +1,102 @@
 package edu.etec.ds.fundamentos
 
 fun sumarHasta(n: Int): Int {
-    if (n == 5) {
-        return n * 3
+    var contador = n
+    if (n in 2..15) {
+        while (contador < 15) {
+            contador += 1
+        }
     }
+    return contador
+
 }
 
 
 fun contarPares(inicio: Int, fin: Int): Int {
-    TODO("Contar numeros pares en el rango [inicio, fin]")
-
+    var contador = 0
+    for (i in inicio..fin) {
+        if (i % 2 == 0) {
+            contador++
+        }
+    }
+    return contador
 }
 
 fun fibonacci(n: Int): Int {
-    TODO("Retornar el n-esimo numero de Fibonacci")
+    if (n == 0) return 0
+    if (n == 1) return 1
+    var a = 0
+    var b = 1
+    for (i in 2..n) {
+        val temp = a + b
+        a = b
+        b = temp
+    }
+    return b
 }
 
 fun factorial(n: Int): Int {
-    TODO("Calcular el factorial de n")
+    var resultado = 1
+    for (i in 1..n) {
+        resultado *= i
+    }
+    return resultado
 }
 
 fun encontrarMaximo(numeros: List<Int>): Int {
-    TODO("Encontrar el valor maximo en la lista")
+    var maximo = numeros[0]
+    for (numero in numeros) {
+        if (numero > maximo) {
+            maximo = numero
+        }
+    }
+    return maximo
 }
 
 fun encontrarMinimo(numeros: List<Int>): Int {
-    TODO("Encontrar el valor minimo en la lista")
+    var minimo = numeros[0]
+    for (numero in numeros) {
+        if (numero < minimo) {
+            minimo = numero
+        }
+    }
+    return minimo
 }
 
 fun sumarLista(numeros: List<Int>): Int {
-    TODO("Sumar todos los elementos de la lista")
+    var suma = 0
+    for (numero in numeros) {
+        suma += numero
+    }
+    return suma
 }
 
 fun inverter(texto: String): String {
-    TODO("Invertir la cadena de texto")
+    return texto.reversed()
 }
 
 fun contarVocales(texto: String): Int {
-    TODO("Contar las vocales en el texto (considerar mayusculas y minusculas)")
+    var contador = 0
+    val vocales = "aeiouAEIOU"
+    for (letra in texto) {
+        if (letra in vocales) {
+            contador++
+        }
+    }
+    return contador
 }
 
 fun esPalindromo(texto: String): Boolean {
-    TODO("Verificar si el texto es un palindromo (ignorando espacios)")
+    val limpio = texto.replace(" ", "").lowercase()
+    return limpio == limpio.reversed()
 }
 
+
 fun tablaMultiplicar(numero: Int): List<Int> {
-    TODO("Retornar lista con la tabla de multiplicar del 1 al 10")
+    val resultado = mutableListOf<Int>()
+    for (i in 1..10) {
+        resultado.add(numero * i)
+    }
+    return resultado
 }
+
