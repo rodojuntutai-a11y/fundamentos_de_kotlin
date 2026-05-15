@@ -1,12 +1,39 @@
 package edu.etec.ds.fundamentos
 
 fun obtenerDiaSemana(dia: Int): String {
-    TODO("Usar when para retornar el nombre del dia (1=Lunes, 7=Domingo)")
+    val dia = 1 or 7
+    val nombreDia = when (dia) {
+        1 -> "Lunes"
+        2 -> "Martes"
+        3 -> "Miércoles"
+        4 -> "Jueves"
+        5 -> "Viernes"
+        6 -> "Sabado"
+        7 -> "Domingo"
+        else -> "Dia invalido"
+    }
 }
 
 fun obtenerNombreMes(mes: Int): String {
-    TODO("Usar when para retornar el nombre del mes")
+    val mes = 3 or 13
+    val nombreMes = when (mes) {
+        1 -> "Enero"
+        2 -> "Febrero"
+        3 -> "Marzo"
+        4 -> "Abril"
+        5 -> "Mayo"
+        6 -> "Junio"
+        7 -> "Julio"
+        8 -> "Agosto"
+        9 -> "Septiembre"
+        10 -> "Octubre"
+        11 -> "Noviembre"
+        12 -> "Diciembre"
+        else -> "Mes invalido"
+    }
+    return (nombreMes)
 }
+
 
 fun clasificarNumeroWhen(numero: Int): String {
     TODO("Usar when para clasificar: Positivo, Negativo o Cero")
