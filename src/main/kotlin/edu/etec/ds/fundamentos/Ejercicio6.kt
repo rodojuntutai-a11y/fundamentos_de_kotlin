@@ -1,7 +1,6 @@
 package edu.etec.ds.fundamentos
 
 fun obtenerDiaSemana(dia: Int): String {
-    val dia = 1 or 7
     val nombreDia = when (dia) {
         1 -> "Lunes"
         2 -> "Martes"
@@ -12,10 +11,10 @@ fun obtenerDiaSemana(dia: Int): String {
         7 -> "Domingo"
         else -> "Dia invalido"
     }
+    return nombreDia
 }
 
 fun obtenerNombreMes(mes: Int): String {
-    val mes = 3 or 13
     val nombreMes = when (mes) {
         1 -> "Enero"
         2 -> "Febrero"
@@ -31,24 +30,53 @@ fun obtenerNombreMes(mes: Int): String {
         12 -> "Diciembre"
         else -> "Mes invalido"
     }
-    return (nombreMes)
+    return nombreMes
 }
+
 
 
 fun clasificarNumeroWhen(numero: Int): String {
-    TODO("Usar when para clasificar: Positivo, Negativo o Cero")
+    val clasificacion = when  {
+        numero > 0  -> "Positivo"
+        numero  < 0 -> "Negativo"
+        else -> "Cero"
+    }
+    return clasificacion
 }
 
 fun clasificarEdad(edad: Int): String {
-    TODO("Usar when con rangos: Bebe (<3), Nino (3-12), Adolescente (13-17), Adulto (18-65), Anciano (>65)")
+    val clasificaEdad = when (edad) {
+        in 0..3 -> "Bebe"
+        in 4..12 -> "Nino"
+        in 13..17 -> "Adolescente"
+        in 18..65 -> "Adulto"
+        else -> "Anciano"
+    }
+    return clasificaEdad
 }
 
 fun convertirMoneda(moneda: String, monto: Double): Double {
-    TODO("Convertir: USD a MXN (1.85), EUR a MXN (18), JPY a MXN (0.10), otro retorna 0")
+    return when (moneda){
+        "USD" -> 1.85 * monto
+        "EUR" ->  18.0 * monto
+        "JPY" ->  0.10 * monto
+        else -> 0.0
+
+        }
+
 }
 
 fun realizarOperacion(operador: Char, a: Int, b: Int): Double {
-    TODO("Usar when para realizar + - * / %. Division por cero retorna 0.0")
+    return when (operador){
+        '+' -> {(a + b)}
+        '-' -> {(a - b)}
+        '*' -> {(a * b)}
+        '/' -> {(a / b)}
+        '%' -> {(a % b)}
+        else ->
+            0.0
+    } as Double
+
 }
 
 fun obtenerDescuentoWhen(monto: Double): Double {
