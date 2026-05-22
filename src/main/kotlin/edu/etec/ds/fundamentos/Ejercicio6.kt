@@ -67,30 +67,46 @@ fun convertirMoneda(moneda: String, monto: Double): Double {
 }
 
 fun realizarOperacion(operador: Char, a: Int, b: Int): Double {
-    return when (operador){
-        '+' -> {(a + b)}
-        '-' -> {(a - b)}
-        '*' -> {(a * b)}
-        '/' -> {(a / b)}
-        '%' -> {(a % b)}
-        else ->
-            0.0
-    } as Double
-
+    return when (operador) {
+        '+' -> (a + b).toDouble()
+        '-' -> (a - b).toDouble()
+        '*' -> (a * b).toDouble()
+        '/' -> if (b != 0) (a / b).toDouble() else 0.0
+        '%' -> if (b != 0) (a % b).toDouble() else 0.0
+        else -> 0.0
+    }
 }
 
 fun obtenerDescuentoWhen(monto: Double): Double {
-    TODO("Usar when como expresion: >200 -> 25%, >150 -> 15%, >100 -> 10%, else 0%")
+    return when {
+        monto > 200 -> monto * 0.10
+        monto > 150 -> monto * 0.15
+        monto > 100 -> monto * 0.10
+        else -> 0.0
+    }
 }
 
 fun obtenerCalificacion(nota: Int): String {
-    TODO("Usar when con rangos: >=90 Promocionado, >=60 Aprobado, else Desaprobado")
+    return when {
+        nota >= 90 -> "Promocionado"
+        nota >= 60 -> "Aprobado"
+        else -> "Desaprobado"
+    }
 }
 
+
 fun esVocal(caracter: Char): Boolean {
-    TODO("Usar when para verificar si es vocal (a, e, i, o, u mayusculas y minusculas)")
+    val texto = "aeiouAEIOU"
+    return when (caracter){
+        in texto -> true
+        else -> false
+    }
 }
 
 fun esPrimo(numero: Int): Boolean {
-    TODO("Usar when para determinar si un numero es primo (mayor a 1 divisible solo por 1 y si mismo)")
+    val primos = setOf(2, 3, 5, 7, 11, 13, 17, 19, 23, 29,31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 79, 83,89, 97)
+    return when (numero){
+        in primos -> true
+        else -> false
+    }
 }
