@@ -104,7 +104,7 @@ fun esVocal(caracter: Char): Boolean {
 }
 
 fun esPrimo(numero: Int): Boolean {
-    val primos = setOf(2, 3, 5, 7, 11, 13, 17, 19, 23, 29,31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 79, 83,89, 97)
+    val primos = setOf(2, 3, 5, 7, 11, 13, 17, 19, 23, 29,31)
     return when (numero){
         in primos -> true
         else -> false
